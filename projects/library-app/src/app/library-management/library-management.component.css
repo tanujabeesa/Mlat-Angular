@@ -1,0 +1,23 @@
+
+.card
+{
+  background-image: url("../../assets/images/9.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card
+{
+  color:black;
+}
+h1
+{
+  color:black;
+}
+.container{
+  background-image: url('../../assets/images/2.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+
+}
+

@@ -1,0 +1,27 @@
+.reset{
+    text-align:right;
+}
+.card{
+  background-image: url('../../assets/images/7.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+
+}
+.card{
+  color:black;
+}
+
+h1
+{
+  color:black;
+}
+.container{
+  background-image: url('../../assets/images/2.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+
+}
+a{
+  color:blue;
+}
+

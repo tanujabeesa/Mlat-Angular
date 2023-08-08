@@ -1,0 +1,22 @@
+.nav-item
+{
+   list-style:none;
+}
+
+div{
+  display:flex;
+  justify-content:flex-start;
+  padding:20px;
+  background-color: cyan;
+  font-weight: bold;
+
+}
+a{
+  text-decoration: none;
+  line-height: 20px;
+  color:black;
+  padding:10px 10px;
+}
+.active{
+  background-color: brown;
+}

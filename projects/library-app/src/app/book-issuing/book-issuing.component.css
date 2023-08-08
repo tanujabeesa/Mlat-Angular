@@ -1,0 +1,17 @@
+.card
+{
+  background-image: url('../../assets/images/6.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.card-text{
+  color:black;
+}
+.card-title{
+  color:black;
+}
+.container{
+  background-image: url('../../assets/images/2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}

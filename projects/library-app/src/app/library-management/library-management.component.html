@@ -1,0 +1,134 @@
+
+<div class="container m-5 justify-content-center">
+  <div class="p-5">
+    <div class="card">
+        <h1 class="card-header text-center">
+         <b> REGISTER FORM</b>
+        </h1>
+        <div class="card-body">
+            <div class="p-5 justify-content-center">
+                <form [formGroup]="Register"class="form-group" (ngSubmit)="onSubmit()">
+
+
+                  <div class="mb-3 row">
+                    <div class="col-4"></div>
+                    <div class="col-4 form-floating">
+
+                    <input type="text" name="username" id="username" class="form-control" placeholder="UserName" formControlName="username"  [ngClass]="{error:getControl('username')?.errors && getControl('username')?.touched}"> <br>
+                    <div *ngIf="getControl('username')?.errors && getControl('username')?.touched" >
+                      <small class="text-primary" *ngIf="getControl('username')?.errors?.['required']">Username is Required</small>
+                      <small class="text-primary" *ngIf="getControl('username')?.errors?.['maxlength']|| getControl('username')?.errors?.['minlength']|| getControl('username')?.errors?.['pattern']">Enter UserName Valid</small>
+                    </div>
+                    <label id="username" class="form-label"><b>User Name</b></label>
+                  </div>
+                    <div class="col-4"></div>
+                  </div>
+                  <div class="mb-3 row">
+                    <div class="col-4"></div>
+                    <div class="col-4 form-floating">
+
+                    <input type="text"  name="email" id="email" class="form-control" formControlName="email" placeholder="Email" [ngClass]="{error:getControl('email')?.errors && getControl('email')?.touched}"> <br>
+                    <div *ngIf="getControl('email')?.errors && getControl('email')?.touched" >
+                      <small class="text-primary" *ngIf="getControl('email')?.errors?.['required']">Email is Required</small>
+                      <small class="text-primary" *ngIf="getControl('email')?.errors?.['maxlength']||  getControl('email')?.errors?.['pattern']">Enter a Valid Email</small>
+                    </div>
+                    <label id="email" class="form-label"><b>Email</b></label>
+                  </div>
+                  <div class="col-4"></div>
+                  </div>
+                  <div class="mb-3 row">
+                    <div class="col-4"></div>
+                     <div class="col-4 form-floating">
+                    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+                    <input type="text" name="Password" id="password" class="form-control" placeholder="Password"formControlName="password"  [ngClass]="{error:getControl('password')?.errors && getControl('password')?.touched}"> <br>
+                    <div *ngIf="getControl('password')?.errors && getControl('password')?.touched" >
+                      <small class="text-primary" *ngIf="getControl('password')?.errors?.['required']">Password is Required</small>
+                      <small class="text-primary" *ngIf="getControl('password')?.errors?.['maxlength']||  getControl('password')?.errors?.['pattern']|| getControl('password')?.errors?.['minlength']">Enter a Valid Password</small>
+                    </div>
+                    <label id="password" class="form-label"><b>Password</b></label>
+                    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+                    <span class="material-symbols-outlined">
+                      visibility_off
+                      </span>
+                    </div>
+                    <div class="col-4"></div>
+                  </div>
+
+                  <div class="mb-3 row">
+                    <div class="col-4"></div>
+                    <div class="col-4 form-floating">
+
+                      <input type="password" class="form-control"name="cnfrmpwd" id="cnfrmpwd" placeholder="Confirm Password" formControlName="cnfrmpwd"
+                      [ngClass]="{error:getControl('cnfrmpwd')?.errors && getControl('cnfrmpwd')?.touched}" ><br> <br>
+                      <div *ngIf="getControl('cnfrmpwd')?.errors && getControl('cnfrmpwd')?.touched">
+                        <small class="text-primary" *ngIf="getControl('cnfrmpwd')?.errors?.['required']">Confirm Password Required</small>
+                        <small class="text-primary" *ngIf="getControl('cnfrmpwd')?.errors?.['minlength'] ||getControl('cnfrmpwd')?.errors?.['maxlength']">Password must be 7 to 15 characters</small>
+                      </div>
+                      <label id="cnfrmpwd" class="form-label"><b>Confirm Password</b></label>
+                      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+                    <span class="material-symbols-outlined">
+                      visibility_off
+                      </span>
+                    </div>
+                    <div class="col-4"></div>
+                    </div>
+                    <div class="mb-3 row">
+                      <div class="col-4"></div>
+                      <div class="col-4 form-floating">
+
+                      <input type="number" class="form-control" id="age" name="age" placeholder="Age" formControlName="age"
+                      [ngClass]="{error:getControl('age')?.errors && getControl('age')?.touched}" > <br> <br>
+                      <div *ngIf="getControl('age')?.errors && getControl('age')?.touched">
+                        <small class="text-primary" *ngIf="getControl('age')?.errors?.['required']">Age is Required</small>
+                        <small class="text-primary" *ngIf="getControl('age')?.errors?.['min'] || getControl('age')?.errors?.['max']">Age must between 18 to 45</small>
+                        <small class="text-primary" *ngIf="getControl('age')?.errors?.['pattern']">Enter Valid Age</small>
+                      </div>
+                      <label id="age" class="form-label"><b>Age</b></label>
+                      </div>
+                      <div class="col-4"></div>
+                    </div>
+                    <div class="mb-3 row">
+                      <div class="col-4"></div>
+                      <div class="col-4 form-floating">
+
+                      <input type="text" class="form-control" id="phnnumber" name="phnnumber" placeholder="Phone Number" formControlName="phnnumber"
+                      [ngClass]="{error:getControl('phnnumber')?.errors && getControl('phnnumber')?.touched}" > <br> <br>
+                      <div *ngIf="getControl('phnnumber')?.errors && getControl('phnnumber')?.touched">
+                        <small class="text-primary" *ngIf="getControl('phnnumber')?.errors?.['required']">Phone Number is Required</small>
+                        <small class="text-primary" *ngIf="getControl('phnnumber')?.errors?.['minlength'] || getControl('phnnumber')?.errors?.['maxlength'] || getControl('phnnumber')?.errors?.['pattern']">Please enter a valid mobile no.</small>
+                      </div>
+                      <label id="phnnumber" class="form-label"><b>Phone Number</b></label>
+                    </div>
+                    <div class="col-4"></div>
+                    </div>
+                  <div class="mb-3 row">
+                    <div class="col-4"></div>
+                    <div class="col-4">
+                    <input type="submit" class="btn btn-primary" >
+                    </div>
+                    <div class="col-4"></div>
+
+                  </div>
+                  <div class="mb-3 row">
+                    <div class="col-4"></div>
+                    <div class="col-4">
+                  <a routerLink="/login"><b>Already User? Login</b></a>
+                </div>
+                <div class="col-4"></div>
+                </div>
+              </form>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+

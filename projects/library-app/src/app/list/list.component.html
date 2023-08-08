@@ -1,0 +1,86 @@
+<br>
+<br>
+<button (click)="logout()" class="btn btn-sm btn-primary text-center">Logout</button>
+<br>
+<br>
+<form class="d-flex justify-content-end">
+  <input class="form-control me-2" type="search" name="src" [(ngModel)]="src"
+   placeholder="Search Book Name" aria-label="Search">
+  <button type="button" class="btn btn-outline-primary" type="button" (click)="searchitem()">Search</button>
+</form>
+
+<br>
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Select</th>
+      <th scope="col">BOOK ID</th>
+      <th scope="col">BOOK NAME</th>
+      <th scope="col">AUTHOR</th>
+      <th scope="col">BORROWER NAME</th>
+      <th scope="col">ISSUE DATE</th>
+      <th colspan="2">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <ng-template [ngIf]="!src">
+    <tr *ngFor="let a of listbrt">
+      <td> <form><input type="checkbox"  (change)="func(a)"/> </form> </td>
+
+      <td [ngStyle]="{'color':getcolor(a.bookid)}">
+                {{a.bookid}}
+      </td>
+
+      <td [ngClass]="{
+            'text-success':a.bookname === 'HTML',
+            'text-primary':a.bookname === 'CSS',
+            'text-danger':a.bookname === 'BOOTSTRAP',
+            'text-warning':a.bookname === 'ANGULAR'
+
+      }">
+        {{a.bookname}}
+      </td>
+
+      <td>{{a.author}}</td>
+      <td>{{a.borrowername}}</td>
+      <td>{{a.issuedate}}</td>
+      <td> <button class="btn btn-sm btn-danger" (click)="fetchitem(a)"> Delete </button> </td>
+    </tr>
+  </ng-template>
+
+
+  <ng-template [ngIf]="src">
+    <tr *ngFor="let a of srcdata">
+      <td> <form><input type="checkbox"  (change)="func(a)"/> </form> </td>
+
+      <td [ngStyle]="{'color':getcolor(a.bookid)}">
+                {{a.bookid}}
+      </td>
+
+      <td [ngClass]="{
+            'text-success':a.bookname === 'HTML',
+            'text-primary':a.bookname === 'CSS',
+            'text-danger':a.bookname === 'BOOTSTRAP',
+            'text-warning':a.bookname === 'ANGULAR'
+
+      }">
+        {{a.bookname}}
+      </td>
+
+      <td>{{a.author}}</td>
+      <td>{{a.borrowername}}</td>
+      <td>{{a.issuedate}}</td>
+      <td> <button class="btn btn-sm btn-danger" (click)="fetchitem(a)"> Delete </button> </td>
+    </tr>
+  </ng-template>
+
+
+  </tbody>
+</table>
+
+
+
+

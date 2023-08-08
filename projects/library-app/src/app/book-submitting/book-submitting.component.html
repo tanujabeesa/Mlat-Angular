@@ -1,0 +1,67 @@
+<div class="container m-5 p-5">
+  <div class="row">
+    <div class="col">
+      <div class="p-3 border bg-light">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-title text-center pb-3"><h1>Book Submitting</h1></div>
+            <div class="card-text">
+              <form class="form-group" (ngSubmit)="onSubmit()">
+              <div class="mb-3 row">
+                <label for="id" class="col-sm-3 col-form-label"><b>BOOK ID</b></label>
+                <div class="col-sm-9">
+                <input type="number" name="id" id="id"
+                class="form-control" placeholder="Enter Bookid" [(ngModel)]="details.id">
+              </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="bookname" class="col-sm-3 col-form-label"><b>BOOK NAME</b></label>
+              <div class="col-sm-9">
+                <input type="text" name="bookname" id="bookname"
+                class="form-control" placeholder="Enter BookName" [(ngModel)]="details.bookname">
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label  class="col-sm-3 col-form-label"><b>AUTHOR NAME</b></label>
+              <div class="col-sm-9">
+                    <select name="author" [(ngModel)]="details.author">
+                      <option *ngFor="let a of Author" [value]="a">{{a}}</option>
+                    </select>
+              </div>
+              </div>
+            <div class="mb-3 row">
+              <label for="borrowername" class="col-sm-3 col-form-label"><b>BORROWER NAME</b></label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" name="borrowername"
+                id="borrowername" placeholder="Enter BorrowerName" [(ngModel)]="details.borrowername">
+              </div>
+            </div>
+
+              <div class="mb-3 row">
+                <label for="returndate"class="col-sm-3 col-form-label"><b>RETURN DATE</b></label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" name="returndate"
+                  id="returndate" placeholder="Enter Date"
+                  [(ngModel)]="details.returndate">
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <div class="col-sm-9">
+
+                  <button type="submit" (click)="onSubmit()">Submit</button>
+              </div>
+              </div>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div *ngIf="canSubmitBooks">
+  <h2>Book Submitting</h2>
+</div>
+<div *ngIf="!canSubmitBooks">
+  <h2>Access Denied</h2>
+  <p>You don't have permission to submit books.</p>
+</div>
